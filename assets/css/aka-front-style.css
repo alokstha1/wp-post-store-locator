@@ -1,0 +1,277 @@
+#primary{
+	width: 100% !important;
+}
+
+.has-sidebar #secondary{
+	display: none !important;
+}
+
+.map-content {
+    position: relative;
+    padding-left: 20px;
+}
+
+.map-content span.store-items {
+    display: block;
+}
+
+span.store-items.get-direction {
+    font-weight: 900;
+    font-size: 13px;
+}
+
+.aka-info-wrap span {
+    display: block;
+}
+
+.aka-info-wrap label {
+	display: inline-block;
+}
+
+span.store-items.store-address:before {
+    content: "\f041";
+    left: 0;
+    font-family: 'FontAwesome';
+    padding-right: 5px;
+}
+
+span.store-items.store-phone:before {
+    content: "\f095";
+    left: 0;
+    font-family: 'FontAwesome';
+    padding-right: 5px;
+}
+
+/*--------------------------------------------------------------
+ * ## Aka Search Wrap
+ *--------------------------------------------------------------
+ */
+
+#aka-search-wrap {
+	background: #f4f3f3;
+	-webkit-border-radius: 4px 4px;
+	        border-radius: 4px 4px;
+    -webkit-box-shadow: 2px 3px 16px #d9d9d9;
+            box-shadow: 2px 3px 16px #d9d9d9;
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding: 10px 15px;
+}
+
+.aka-input{
+	margin-bottom: 15px;
+}
+
+#aka-radius{
+	float: left;
+	padding-right: 10px;
+	width: 50%;
+}
+
+#aka-results{
+	float: left;
+	padding-left: 10px;
+	width: 50%;
+}
+
+select#aka-radius-dropdown, select#aka-results-dropdown {
+    width: 100%;
+    padding: 0 20px 0 5px;
+}
+
+.aka-search-btn-wrap{
+	display: inline-block;
+	margin: 15px 0 0;
+	overflow: hidden;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+ * ## Aka Left Wrap
+ *--------------------------------------------------------------
+ */
+
+aside.aka-left-wrap{
+	float: left;
+	height: calc(100vh - 200px);
+    -ms-overflow-y: scroll;
+    	overflow-y: scroll;
+    position: relative;
+	width: 50%;
+}
+
+.aka-left-wrap ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.store-ul-lists li{
+    border-bottom: 1px dotted #ccc;
+    display: block;
+    margin: 15px 0;
+    overflow: hidden;
+    padding: 10px;
+}
+
+aside.aka-left-wrap ul li:first-child{
+	margin-top: 0;
+}
+
+aside.aka-left-wrap ul li:last-child{
+	margin-bottom: 0;
+}
+
+ul.store-ul-lists li span.store-key{
+	font-weight: bold;
+	font-size: 18px;
+	margin-right: 5px;
+	position: absolute;
+	left: 0;
+}
+
+ul.store-ul-lists li span.store-title a{
+	color: #377FB0;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+	margin-right: 5px;
+	text-decoration: none;
+	-webkit-transition: none;
+	   -moz-transition: none;
+	    -ms-transition: none;
+	     -o-transition: none;
+	        transition: none;
+	text-transform: uppercase;
+}
+
+ul.store-ul-lists li p{
+	color: #999;
+	margin: 5px 0;
+}
+
+ul.store-ul-lists li span.store-items{
+	margin-right: 5px;
+}
+
+.store-items a.aka-get-direction{
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+	position: relative;
+	-webkit-transition: all 0.15s ease;
+	   -moz-transition: all 0.15s ease;
+	    -ms-transition: all 0.15s ease;
+	     -o-transition: all 0.15s ease;
+	        transition: all 0.15s ease;
+}
+
+.store-items a.aka-get-direction:hover{
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+	padding-left: 20px;
+}
+
+.store-items a.aka-get-direction:hover:before{
+	content: '\f124';
+	left: 0;
+	position: absolute;
+	top: 50%;
+	font-family: 'FontAwesome';
+	-webkit-transform: translateY(-50%);
+	   -moz-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	     -o-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+
+.aka-direction-before a.aka-back{
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+	display: inline-block;
+	margin-bottom: 10px;
+	position: relative;
+	text-decoration: none;
+}
+
+.aka-direction-before a.aka-back:hover{
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+	padding-left: 20px;
+	-webkit-transition: all 0.15s ease;
+	   -moz-transition: all 0.15s ease;
+	    -ms-transition: all 0.15s ease;
+	     -o-transition: all 0.15s ease;
+	        transition: all 0.15s ease;
+}
+
+.aka-direction-before a.aka-back:hover:before{
+	content: '\f0a5';
+	left: 0;
+	position: absolute;
+	top: 50%;
+	font-family: 'FontAwesome';
+	-webkit-transform: translateY(-50%);
+	   -moz-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	     -o-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+
+
+#aka-direction-detail .aka-distance-time span{
+	margin: 10px 0;
+}
+
+#aka-direction-detail ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#aka-direction-detail ul li{
+	border-bottom: 1px dotted #ccc;
+    display: block;
+    overflow: hidden;
+    padding: 5px;
+    padding-left: 0;
+}
+
+/*--------------------------------------------------------------
+ * ## Aka Right Map Wrap
+ *--------------------------------------------------------------
+ */
+
+aside.aka-right-wrap{
+	float: right;
+    overflow: hidden;
+    padding-left: 10px;
+	width: 50%;
+}
+
+.aka-map-wrap {
+	width: 100%;
+}
+
+#aka-map{
+	height: calc(100vh - 200px) !important;
+}
+
+
+@media screen and (max-width: 480px){
+	aside.aka-left-wrap{
+		float: none;
+		height: calc(100vh - 200px);
+		margin-top: 20px;
+		padding-left: 0px;
+		width: 100%;
+	}
+
+	aside.aka-right-wrap{
+		float: none;
+		width: 100%;
+	}
+
+	#aka-map{
+		height: 50vh !important;
+	}
+	
+}

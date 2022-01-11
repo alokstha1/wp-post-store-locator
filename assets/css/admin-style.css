@@ -1,0 +1,237 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?54620740');
+  src: url('../font/fontello.eot?54620740#iefix') format('embedded-opentype'),
+  url('../font/fontello.woff?54620740') format('woff'),
+  url('../font/fontello.ttf?54620740') format('truetype'),
+  url('../font/fontello.svg?54620740#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*@import url('jquery-ui.custom.css');*/
+
+table > tbody > tr > td.remove {
+    width: 16px !important;
+    vertical-align: middle;
+}
+
+table > tbody > tr > td.remove {
+    background: #F9F9F9;
+}
+
+a.aka-button-remove{
+    background: url(../images/sprite.png) -16px -116px no-repeat #fff;
+    display: block;
+    height: 18px;
+    width: 18px;
+    border-radius: 9px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    position: relative;
+}
+
+/*table > tbody > tr > td.remove > a.aka-button-remove {
+}
+*/
+
+span.slwp-info:before {
+
+    content: '\e802';
+    font-size: 14px;
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+
+}
+
+span.slwp-info-text:after {
+    position: absolute;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 11px solid #222;
+    content: "";
+    left: 27px;
+    bottom: -10px;
+}
+
+span.slwp-info {
+    position: relative;
+    margin-left: 3px;
+}
+
+.slwp-hide {
+    display: none;
+}
+
+span.slwp-info-text {
+    position: absolute;
+    padding: 10px;
+    left: -29px;
+    bottom: 25px;
+    color: #eee;
+    min-width: 200px;
+    background: #222;
+    border-radius: 3px;
+}
+
+
+
+#aka-store-setting-form .postbox-container {
+    width: 100%;
+    clear: both;
+}
+
+#aka-store-setting-form .metabox-container {
+    width: 100%;
+    padding-top: 0;
+    float: left;
+    margin-right: 20px;
+}
+
+#aka-store-setting-form label {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    width: 25%;
+    text-align: left;
+    line-height: 1.3;
+    font-weight: 600;
+    padding-right: 24px;
+}
+
+#aka-store-setting-form .postbox h3.hndle {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+span.distance-boxes, span.post-types-boxes {
+    /*overflow: hidden;*/
+    display: inline-block;
+}
+
+#aka-store-setting-form .distance-boxes label, #aka-store-setting-form .distance-boxes input, #aka-store-setting-form .post-types-boxes label, #aka-store-setting-form .post-types-boxes input {
+    float: left;
+    width: auto;
+}
+
+table {
+    width: 100%;
+}
+
+#aka-newmeta input[type="text"], #aka-newmeta textarea {
+    width: 100%;
+}
+
+#aka-newmeta td {
+    vertical-align: top;
+}
+
+table#aka-newmeta {
+    border-radius: 0 0 0 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 9px;
+    padding: 15px 0px 0px 0px;
+    line-height: 1.3;
+    vertical-align: middle;
+    margin-top: 0.5em;
+    width: 100%;
+    clear: both;
+    border: 1px solid #EDEDED;
+    background-color: #fff;
+}
+
+table#aka-newmeta > thead > tr > th.aka-del-edit, table#aka-newmeta > tbody > tr > td.aka-del-edit {
+    width: 16px !important;
+    vertical-align: middle;
+}
+
+table#aka-newmeta th, table#aka-newmeta td {
+    padding: 8px;
+    position: relative;
+    vertical-align: top;
+    border-right: 1px solid #e1e1e1;
+    color: #32373c;
+    font-size: 14px;
+    font-weight: normal;
+    background: transparent none repeat scroll 0% 0%;
+    border-width: 1px 1px 0px 0px;
+    border-style: solid solid none none;
+    border-color: #EDEDED #EDEDED -moz-use-text-color -moz-use-text-color;
+    -moz-border-top-color: none;
+    -moz-border-right-color: none;
+    -moz-border-bottom-color: none;
+    -moz-border-left-color: none;
+    border-image: none;
+}
+
+.aka-button-delete {
+    background: url(../images/sprite.png) -16px -116px no-repeat #fff;
+    display: block;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+}
+
+.aka-button-delete {
+    background-position: -64px -214px;
+}
+
+ul.nav-tab-wrapper li {
+    margin-bottom: 0px;
+}
+
+.ui-tabs-active a {
+    color: #000000;
+}
+
+.nav-tab a {
+    color: #555;
+    text-decoration: none;
+}
+
+ul.nav-tab-wrapper li.ui-tabs-active {
+    background: #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    margin-bottom: -1px;
+}
+
+#tabs-wrap {
+    display: inline-block;
+    width: 100%;
+}
+
+.elm-wrap {
+    font-size: 14px;
+    vertical-align: top;
+    text-align: left;
+    padding: 9px 10px 20px 0;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+
+input[type=radio],
+input[type=checkbox]{
+    margin-top: 0;
+}
