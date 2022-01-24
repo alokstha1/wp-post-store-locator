@@ -7,7 +7,7 @@ jQuery(document).ready( function() {
     markerSettings = {},
     directionMarkerPosition = {};
 
-    if ( jQuery('#aka-map').length ) {
+    if ( jQuery('#slwp-map').length ) {
 
         slwp_initMap();
     }
@@ -16,7 +16,7 @@ jQuery(document).ready( function() {
     function slwp_initMap() {
 
         var mapOptions, infoWindow, latLng, bounds, startLatLng,
-        maxZoom = Number( slwp_stores.aka_settings.max_zoom_level );
+        maxZoom = Number( slwp_stores.slwp_settings.max_zoom_level );
 
         //Create an infowindow
         infoWindow = new google.maps.InfoWindow();
@@ -28,19 +28,19 @@ jQuery(document).ready( function() {
 
         // Set map options.
         mapOptions = {
-            zoom: Number( slwp_stores.aka_settings.zoom_level ),
+            zoom: Number( slwp_stores.slwp_settings.zoom_level ),
             center: startLatLng,
-            mapTypeId: google.maps.MapTypeId[ slwp_stores.aka_settings.map_type.toUpperCase() ],
-            mapTypeControl: Number( slwp_stores.aka_settings.map_type_control ) ? true : false,
-            scrollwheel: Number( slwp_stores.aka_settings.scrollwheel_zoom ) ? true : false,
+            mapTypeId: google.maps.MapTypeId[ slwp_stores.slwp_settings.map_type.toUpperCase() ],
+            mapTypeControl: Number( slwp_stores.slwp_settings.map_type_control ) ? true : false,
+            scrollwheel: Number( slwp_stores.slwp_settings.scrollwheel_zoom ) ? true : false,
         };
 
-        map = new google.maps.Map(document.getElementById('aka-map'), mapOptions );
+        map = new google.maps.Map(document.getElementById('slwp-map'), mapOptions );
 
         // Only run this part if the store locator exist and we don't just have a basic map.
-        if ( jQuery( "#aka-map" ).length ) {
+        if ( jQuery( "#slwp-map" ).length ) {
 
-            if ( slwp_stores.aka_settings.autocomplete == 1 ) {
+            if ( slwp_stores.slwp_settings.autocomplete == 1 ) {
                 slwp_initAutocomplete();
             }
         }
@@ -88,18 +88,18 @@ jQuery(document).ready( function() {
         var input, autocomplete, place,
         options = {};
 
-        if ( 1 == slwp_stores.aka_settings.autocomplete ) {
+        if ( 1 == slwp_stores.slwp_settings.autocomplete ) {
 
             // Check if we need to set the geocode component restrictions.
-            if ( typeof slwp_stores.aka_settings.region !== "undefined" && slwp_stores.aka_settings.region.length > 0 ) {
+            if ( typeof slwp_stores.slwp_settings.region !== "undefined" && slwp_stores.slwp_settings.region.length > 0 ) {
                 var regionComponents = {};
-                regionComponents.country = slwp_stores.aka_settings.region.toUpperCase();
+                regionComponents.country = slwp_stores.slwp_settings.region.toUpperCase();
 
                 options.componentRestrictions = regionComponents;
 
             }
 
-            input        = document.getElementById( "aka-search-input" );
+            input        = document.getElementById( "slwp-search-input" );
             autocomplete = new google.maps.places.Autocomplete( input, options );
 
             autocomplete.addListener( "place_changed", function() {
@@ -129,8 +129,8 @@ jQuery(document).ready( function() {
             /*
              * Use coordinates from the default start point defined or we set it to 0,0
              */
-             if ( slwp_stores.aka_settings.start_latlng !== "" ) {
-                latLng      = slwp_stores.aka_settings.start_latlng.split( "," );
+             if ( slwp_stores.slwp_settings.start_latlng !== "" ) {
+                latLng      = slwp_stores.slwp_settings.start_latlng.split( "," );
                 startLatLng = new google.maps.LatLng( latLng[0], latLng[1] );
             } else {
                 startLatLng = new google.maps.LatLng( 0,0 );
@@ -223,26 +223,26 @@ jQuery(document).ready( function() {
             }
 
 
-            var title_url_wrap = slwp_setTitleUrl(storeName, url, slwp_stores.aka_settings.show_url_field);
-            infoWindowContent += '<div class="aka-info-wrap">';
-            infoWindowContent += '<span class="aka-title"><label>Title:</label> ';
+            var title_url_wrap = slwp_setTitleUrl(storeName, url, slwp_stores.slwp_settings.show_url_field);
+            infoWindowContent += '<div class="slwp-info-wrap">';
+            infoWindowContent += '<span class="slwp-title"><label>Title:</label> ';
             infoWindowContent += title_url_wrap.before_wrap;
             infoWindowContent += title_url_wrap.title;
             infoWindowContent += title_url_wrap.after_wrap;
             infoWindowContent += '</span>';
-            infoWindowContent += '<span class="aka-address"><label>Address:</label> ';
+            infoWindowContent += '<span class="slwp-address"><label>Address:</label> ';
             infoWindowContent += storeAddress;
             infoWindowContent += '</span>';
-            if ( slwp_stores.aka_settings.show_phone_field ) {
+            if ( slwp_stores.slwp_settings.show_phone_field ) {
 
-                infoWindowContent += '<span class="aka-phone"><label>Phone No:</label> ' ;
+                infoWindowContent += '<span class="slwp-phone"><label>Phone No:</label> ' ;
                 infoWindowContent += storePhone;
                 infoWindowContent += '</span>';
 
             }
-            if ( slwp_stores.aka_settings.show_description_field ) {
+            if ( slwp_stores.slwp_settings.show_description_field ) {
 
-                infoWindowContent += '<span class="aka-desc"><label>Description:</label> ';
+                infoWindowContent += '<span class="slwp-desc"><label>Description:</label> ';
                 infoWindowContent += storeDescription;
                 infoWindowContent += '</span>';
 
@@ -291,7 +291,7 @@ jQuery(document).ready( function() {
         */
         function slwp_initialize_store_search( infoWindow ) {
 
-            jQuery( "#aka-search-btn" ).unbind( "click" ).bind( "click", function( e ) {
+            jQuery( "#slwp-search-btn" ).unbind( "click" ).bind( "click", function( e ) {
                 e.preventDefault();
 
                 var keepStartMarker = false;
@@ -307,7 +307,7 @@ jQuery(document).ready( function() {
                  * or if autocomplete is enabled and we already
                  * have the latlng values.
                  */
-                 if ( slwp_stores.aka_settings.autocomplete == 1 && typeof autoCompleteLatLng !== "undefined" ) {
+                 if ( slwp_stores.slwp_settings.autocomplete == 1 && typeof autoCompleteLatLng !== "undefined" ) {
 
                     slwp_prepareStoreSearch( autoCompleteLatLng, infoWindow );
                 } else {
@@ -381,14 +381,14 @@ jQuery(document).ready( function() {
          function slwp_codeAddress( infoWindow ) {
 
             var request = {
-                'address': jQuery( "#aka-search-input" ).val()
+                'address': jQuery( "#slwp-search-input" ).val()
             };
             var latLng;
 
             // Check if we need to set the geocode component restrictions.
-            if ( typeof slwp_stores.aka_settings.region !== "undefined" && slwp_stores.aka_settings.region.length > 0 ) {
+            if ( typeof slwp_stores.slwp_settings.region !== "undefined" && slwp_stores.slwp_settings.region.length > 0 ) {
                 var regionComponents = {};
-                regionComponents.country = slwp_stores.aka_settings.region.toUpperCase();
+                regionComponents.country = slwp_stores.slwp_settings.region.toUpperCase();
 
                 request.componentRestrictions = regionComponents;
 
@@ -431,13 +431,13 @@ jQuery(document).ready( function() {
          */
          function slwp_makeAjaxRequest( startLatLng, infoWindow ) {
 
-            var post_id = jQuery('#aka_post_id').val();
-            var storeList = jQuery("#aka-store-lists");
-            var search_radius = jQuery('#aka-radius-dropdown').val();
-            var stores_count = jQuery('#aka-results-dropdown').val();
+            var post_id = jQuery('#slwp-post-id').val();
+            var storeList = jQuery("#slwp-store-lists");
+            var search_radius = jQuery('#slwp-radius-dropdown').val();
+            var stores_count = jQuery('#slwp-results-dropdown').val();
 
             var ajaxData = {
-                action: "aka_store_search",
+                action: "slwp_store_search",
                 lat: startLatLng.lat(),
                 lng: startLatLng.lng(),
                 post_id: post_id,
@@ -445,7 +445,7 @@ jQuery(document).ready( function() {
                 stores_count: stores_count
             };
 
-            var maxZoom = Number( slwp_stores.aka_settings.max_zoom_level );
+            var maxZoom = Number( slwp_stores.slwp_settings.max_zoom_level );
 
             jQuery(storeList).empty();
 
@@ -461,7 +461,7 @@ jQuery(document).ready( function() {
                         var serial_no = index;
                         serial_no = ++serial_no;
 
-                        var title_url_wrap = slwp_setTitleUrl(value.aka_name, value.aka_url, slwp_stores.aka_settings.show_url_field);
+                        var title_url_wrap = slwp_setTitleUrl(value.aka_name, value.aka_url, slwp_stores.slwp_settings.show_url_field);
 
                         result_html += '<li class="store-items" id="store-item-id-'+index+'" data-storeid="'+index+'" data-storename="'+value.aka_name+'" data-storeurl="'+value.aka_url+'" data-latlng="'+value.aka_location_latn+'" data-phone="'+value.aka_phone+'" data-address="'+value.aka_location+'" data-desc="'+value.aka_description+'">';
                         result_html += '<div class="map-content">';
@@ -473,16 +473,16 @@ jQuery(document).ready( function() {
                         result_html += '</h3>';
                         result_html += '<span class="store-items store-address">'+value.aka_location;
                         result_html += '</span>';
-                        if ( slwp_stores.aka_settings.show_phone_field ) {
+                        if ( slwp_stores.slwp_settings.show_phone_field ) {
 
                             result_html += '<span class="store-items store-phone">'+value.aka_phone+'</span>';
                         }
-                        if ( slwp_stores.aka_settings.show_description_field ) {
+                        if ( slwp_stores.slwp_settings.show_description_field ) {
 
                             result_html += '<p>'+value.aka_description+'</p>';
                         }
-                        if ( slwp_stores.aka_settings.direction_view_control ) {
-                            result_html += '<span class="store-items get-direction"><a class="aka-get-direction" href="#" id="get-direction-'+index+'">Get Direction</a></span>';
+                        if ( slwp_stores.slwp_settings.direction_view_control ) {
+                            result_html += '<span class="store-items get-direction"><a class="slwp-get-direction" href="#" id="get-direction-'+index+'">Get Direction</a></span>';
                         }
                         result_html += '</div>';
                         result_html += '</li>';
@@ -534,7 +534,7 @@ jQuery(document).ready( function() {
           */
           function slwp_fitBounds() {
              var i, markerLen,
-             maxZoom = Number( slwp_stores.aka_settings.max_zoom_level ),
+             maxZoom = Number( slwp_stores.slwp_settings.max_zoom_level ),
              bounds  = new google.maps.LatLngBounds();
 
              // Make sure we don't zoom to far.
@@ -557,10 +557,10 @@ jQuery(document).ready( function() {
          * @returns {void}
          */
          function slwp_render_direction() {
-            jQuery( "#aka-store-lists" ).on( "click", ".aka-get-direction", function() {
+            jQuery( "#slwp-store-lists" ).on( "click", ".slwp-get-direction", function() {
 
                 // Check if we need to render the direction on the map.
-                if ( slwp_stores.aka_settings.direction_view_control == 1 ) {
+                if ( slwp_stores.slwp_settings.direction_view_control == 1 ) {
                     slwp_renderDirections( jQuery( this ) );
                     return false;
                 }
@@ -605,7 +605,7 @@ jQuery(document).ready( function() {
         }
 
         if ( start && end ) {
-            jQuery( "#aka-direction-details ul" ).empty();
+            jQuery( "#slwp-direction-details ul" ).empty();
                 slwp_calcRoute( start, end );
                 //Trigger click on back button to locations lists when directions are shown.
                 slwp_triggerLocationLists();
@@ -625,7 +625,7 @@ jQuery(document).ready( function() {
              directionStops = "",
              request = {};
 
-             if ( slwp_stores.aka_settings.distance_unit == "km" ) {
+             if ( slwp_stores.slwp_settings.distance_unit == "km" ) {
                 distanceUnit = 'METRIC';
             } else {
                 distanceUnit = 'IMPERIAL';
@@ -646,7 +646,7 @@ jQuery(document).ready( function() {
                     if ( response.routes.length > 0 ) {
                         direction = response.routes[0];
 
-                        directionStops += "<li><div class='aka-direction-before'><a class='aka-back' id='aka-direction-start' href='#'>Back</a><div class='aka-distance-time'><span class='aka-total-distance'>" + direction.legs[0].distance.text + "</span> - <span class='aka-total-durations'>" + direction.legs[0].duration.text + "</span></div></div></li>";
+                        directionStops += "<li><div class='slwp-direction-before'><a class='slwp-back' id='slwp-direction-start' href='#'>Back</a><div class='slwp-distance-time'><span class='slwp-total-distance'>" + direction.legs[0].distance.text + "</span> - <span class='slwp-total-durations'>" + direction.legs[0].duration.text + "</span></div></div></li>";
 
                         // Loop over the legs and steps of the directions.
                         for ( i = 0; i < direction.legs.length; i++ ) {
@@ -655,14 +655,14 @@ jQuery(document).ready( function() {
                             for ( j = 0, len = legs.steps.length; j < len; j++ ) {
                                 step = legs.steps[j];
                                 index = j+1;
-                                directionStops = directionStops + "<li><div class='aka-direction-index'>" + index + "</div><div class='aka-direction-txt'>" + step.instructions + "</div><div class='aka-direction-distance'>" + step.distance.text + "</div></li>";
+                                directionStops = directionStops + "<li><div class='slwp-direction-index'>" + index + "</div><div class='slwp-direction-txt'>" + step.instructions + "</div><div class='slwp-direction-distance'>" + step.distance.text + "</div></li>";
                             }
                         }
-                        directionStops += "<p class='aka-direction-after'>" + response.routes[0].copyrights + "</p>";
+                        directionStops += "<p class='slwp-direction-after'>" + response.routes[0].copyrights + "</p>";
 
-                        jQuery( "#aka-direction-detail ul" ).html( directionStops );
-                        jQuery( "#aka-store-lists" ).hide();
-                        jQuery( "#aka-direction-detail" ).show();
+                        jQuery( "#slwp-direction-detail ul" ).html( directionStops );
+                        jQuery( "#slwp-store-lists" ).hide();
+                        jQuery( "#slwp-direction-detail" ).show();
 
                         // Remove all single markers from the map.
                         for ( i = 0, len = markersArray.length; i < len; i++ ) {
@@ -687,7 +687,7 @@ jQuery(document).ready( function() {
         */
         function slwp_triggerLocationLists() {
              // Handle the click on the back button when the route directions are displayed.
-             jQuery( "#aka-direction-detail" ).on( "click", ".aka-back", function() {
+             jQuery( "#slwp-direction-detail" ).on( "click", ".slwp-back", function() {
                 var i, len;
 
                  // Remove the directions from the map.
@@ -706,9 +706,9 @@ jQuery(document).ready( function() {
                 map.setCenter( directionMarkerPosition.centerLatlng );
                 map.setZoom( directionMarkerPosition.zoomLevel );
 
-                jQuery( ".aka-direction-before, .aka-direction-after" ).remove();
-                jQuery( "#aka-store-lists" ).show();
-                jQuery( "#aka-direction-detail" ).hide();
+                jQuery( ".slwp-direction-before, .slwp-direction-after" ).remove();
+                jQuery( "#slwp-store-lists" ).show();
+                jQuery( "#slwp-direction-detail" ).hide();
 
                 return false;
             });
@@ -722,11 +722,11 @@ jQuery(document).ready( function() {
          */
          function slwp_toggleMarkerAnimation() {
 
-            jQuery('ul#aka-store-lists').on('mouseenter', 'li', function(){
+            jQuery('ul#slwp-store-lists').on('mouseenter', 'li', function(){
                 slwp_letsAnimate( jQuery(this).data('storeid'), 'start' );
             });
 
-            jQuery('ul#aka-store-lists').on('mouseleave', 'li', function(){
+            jQuery('ul#slwp-store-lists').on('mouseleave', 'li', function(){
                 slwp_letsAnimate( jQuery(this).data('storeid'), 'stop' );
             });
 

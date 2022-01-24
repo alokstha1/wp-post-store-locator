@@ -3,7 +3,7 @@
 * Returns map api url based on languare and regions set.
 */
 function slwp_stores_gmap_api_params( $api_key_type, $geocode_params = false ) {
-    $aka_store_setting = get_option('slwp_store_options');
+    $slwp_store_setting = get_option('slwp_store_options');
     $api_params = '';
     $param_keys = array( 'language', 'region', 'key' );
 
@@ -21,7 +21,7 @@ function slwp_stores_gmap_api_params( $api_key_type, $geocode_params = false ) {
             $option_key = $param_key;
         }
 
-        $param_val = $aka_store_setting[$option_key];
+        $param_val = $slwp_store_setting[$option_key];
 
         if ( !empty( $param_val ) ) {
             $api_params .= $param_key . '=' . $param_val . '&';
@@ -32,7 +32,7 @@ function slwp_stores_gmap_api_params( $api_key_type, $geocode_params = false ) {
         $api_params = $first_sep . rtrim( $api_params, '&' );
     }
 
-    if ( 'browser_key' == $api_key_type && $aka_store_setting['autocomplete']  ) {
+    if ( 'browser_key' == $api_key_type && $slwp_store_setting['autocomplete']  ) {
         $api_params .= '&libraries=places';
     }
 
@@ -43,7 +43,7 @@ function slwp_stores_gmap_api_params( $api_key_type, $geocode_params = false ) {
 * Return Map zoom level dropdown setting for admin.
 */
 function slwp_stores_map_zoom_levels( $saved_zoom_level = '' ) {
-    $select_dropdown = '<select id="zoom-level" name="aka_store_setting[zoom_level]" autocomplete="off">';
+    $select_dropdown = '<select id="zoom-level" name="slwp_store_setting[zoom_level]" autocomplete="off">';
 
     for ( $i = 1; $i < 13; $i++ ) {
         $selected = '';
@@ -85,7 +85,7 @@ function slwp_stores_map_type_options( $saved_map_type = '' ) {
         'terrain'   => __( 'Terrain', 'slwp-stores' )
         );
 
-    $select_dropdown = '<select name="aka_store_setting[map_type]" id="map-type">';
+    $select_dropdown = '<select name="slwp_store_setting[map_type]" id="map-type">';
     foreach ( $map_types as $key => $map_type_value ) {
         $selected = ( $key == $saved_map_type ) ? 'selected="selected"' : '';
         $select_dropdown .= '<option value="' . esc_attr( $key ) . '" '.$selected.'>' . esc_html( $map_type_value ) . '</option>';
@@ -427,7 +427,7 @@ function slwp_stores_deregister_other_gmaps() {
     global $wp_scripts;
     if ( !empty( $wp_scripts->registered ) ) {
         foreach ( $wp_scripts->registered as $index => $script ) {
-            if ( ( strpos( $script->src, 'font-awesome.min.css' ) !== false ) || ( strpos( $script->src, 'font-awesome.css' ) !== false ) && ( $script->handle !== 'aka-load-fa' ) ) {
+            if ( ( strpos( $script->src, 'font-awesome.min.css' ) !== false ) || ( strpos( $script->src, 'font-awesome.css' ) !== false ) && ( $script->handle !== 'slwp-load-fa' ) ) {
                 wp_deregister_script( $script->handle );
             }
         }
@@ -441,7 +441,7 @@ function slwp_stores_deregister_other_font_awesome() {
     global $wp_scripts;
     if ( !empty( $wp_scripts->registered ) ) {
         foreach ( $wp_scripts->registered as $index => $script ) {
-            if ( ( strpos( $script->src, 'maps.google.com' ) !== false ) || ( strpos( $script->src, 'maps.googleapis.com' ) !== false ) && ( $script->handle !== 'aka-gmap' ) ) {
+            if ( ( strpos( $script->src, 'maps.google.com' ) !== false ) || ( strpos( $script->src, 'maps.googleapis.com' ) !== false ) && ( $script->handle !== 'slwp-gmap' ) ) {
                 wp_deregister_script( $script->handle );
             }
         }
@@ -477,7 +477,8 @@ function slwp_stores_get_address_latlng( $address ) {
  * @return array $response Either a WP_Error or the response from the Geocode API.
  */
 function slwp_stores_call_geocode_api( $address ) {
-    $url      = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode( $address ) . slwp_stores_gmap_api_params( 'server_key', true );
+    // $url      = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode( $address ) . slwp_stores_gmap_api_params( 'server_key', true );
+    $url      = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode( $address ) . slwp_stores_gmap_api_params( 'browser_key', true );
     $response = wp_remote_get( $url );
     return $response;
 }
@@ -500,7 +501,7 @@ function slwp_stores_max_map_zoom_levels( $max_value ) {
         $i++;
     }
 
-    $dropdown = '<select id="max-zoom-level" name="aka_store_setting[max_zoom_level]" autocomplete="off">';
+    $dropdown = '<select id="max-zoom-level" name="slwp_store_setting[max_zoom_level]" autocomplete="off">';
 
     foreach ( $max_zoom_levels as $key => $value ) {
         $selected = ( $max_value == $value ) ? 'selected="selected"' : '';
@@ -518,13 +519,13 @@ function slwp_stores_max_map_zoom_levels( $max_value ) {
  */
 function slwp_stores_get_dropdown_list( $list_type ) {
 
-    $aka_store_setting = get_option('slwp_store_options');
+    $slwp_store_setting = get_option('slwp_store_options');
     $dropdown_list = '';
-    $settings      = explode( ',', $aka_store_setting[$list_type] );
+    $settings      = explode( ',', $slwp_store_setting[$list_type] );
 
     // Only show the distance unit if we are dealing with the search radius.
     if ( 'radius_options' == $list_type  ) {
-        $distance_unit = ' '. esc_attr( $aka_store_setting['distance_unit'] );
+        $distance_unit = ' '. esc_attr( $slwp_store_setting['distance_unit'] );
     } else {
         $distance_unit = '';
     }

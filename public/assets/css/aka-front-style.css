@@ -20,11 +20,11 @@ span.store-items.get-direction {
     font-size: 13px;
 }
 
-.aka-info-wrap span {
+.slwp-info-wrap span {
     display: block;
 }
 
-.aka-info-wrap label {
+.slwp-info-wrap label {
 	display: inline-block;
 }
 
@@ -43,11 +43,11 @@ span.store-items.store-phone:before {
 }
 
 /*--------------------------------------------------------------
- * ## Aka Search Wrap
+ * ## SLWP Search Wrap
  *--------------------------------------------------------------
  */
 
-#aka-search-wrap {
+#slwp-search-wrap {
 	background: #f4f3f3;
 	-webkit-border-radius: 4px 4px;
 	        border-radius: 4px 4px;
@@ -58,28 +58,28 @@ span.store-items.store-phone:before {
 	padding: 10px 15px;
 }
 
-.aka-input{
+.slwp-input{
 	margin-bottom: 15px;
 }
 
-#aka-radius{
+#slwp-radius{
 	float: left;
 	padding-right: 10px;
 	width: 50%;
 }
 
-#aka-results{
+#slwp-results{
 	float: left;
 	padding-left: 10px;
 	width: 50%;
 }
 
-select#aka-radius-dropdown, select#aka-results-dropdown {
+select#slwp-radius-dropdown, select#slwp-results-dropdown {
     width: 100%;
     padding: 0 20px 0 5px;
 }
 
-.aka-search-btn-wrap{
+.slwp-search-btn-wrap{
 	display: inline-block;
 	margin: 15px 0 0;
 	overflow: hidden;
@@ -87,11 +87,11 @@ select#aka-radius-dropdown, select#aka-results-dropdown {
 }
 
 /*--------------------------------------------------------------
- * ## Aka Left Wrap
+ * ## SLWP Left Wrap
  *--------------------------------------------------------------
  */
 
-aside.aka-left-wrap{
+aside.slwp-left-wrap{
 	float: left;
 	height: calc(100vh - 200px);
     -ms-overflow-y: scroll;
@@ -100,7 +100,7 @@ aside.aka-left-wrap{
 	width: 50%;
 }
 
-.aka-left-wrap ul{
+.slwp-left-wrap ul{
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -114,11 +114,11 @@ ul.store-ul-lists li{
     padding: 10px;
 }
 
-aside.aka-left-wrap ul li:first-child{
+aside.slwp-left-wrap ul li:first-child{
 	margin-top: 0;
 }
 
-aside.aka-left-wrap ul li:last-child{
+aside.slwp-left-wrap ul li:last-child{
 	margin-bottom: 0;
 }
 
@@ -153,7 +153,7 @@ ul.store-ul-lists li span.store-items{
 	margin-right: 5px;
 }
 
-.store-items a.aka-get-direction{
+.store-items a.slwp-get-direction{
 	-webkit-box-shadow: none;
 	        box-shadow: none;
 	position: relative;
@@ -164,13 +164,13 @@ ul.store-ul-lists li span.store-items{
 	        transition: all 0.15s ease;
 }
 
-.store-items a.aka-get-direction:hover{
+.store-items a.slwp-get-direction:hover{
 	-webkit-box-shadow: none;
 	        box-shadow: none;
 	padding-left: 20px;
 }
 
-.store-items a.aka-get-direction:hover:before{
+.store-items a.slwp-get-direction:hover:before{
 	content: '\f124';
 	left: 0;
 	position: absolute;
@@ -183,7 +183,7 @@ ul.store-ul-lists li span.store-items{
 	        transform: translateY(-50%);
 }
 
-.aka-direction-before a.aka-back{
+.slwp-direction-before a.slwp-back{
 	-webkit-box-shadow: none;
 	        box-shadow: none;
 	display: inline-block;
@@ -192,7 +192,7 @@ ul.store-ul-lists li span.store-items{
 	text-decoration: none;
 }
 
-.aka-direction-before a.aka-back:hover{
+.slwp-direction-before a.slwp-back:hover{
 	-webkit-box-shadow: none;
 	        box-shadow: none;
 	padding-left: 20px;
@@ -203,7 +203,7 @@ ul.store-ul-lists li span.store-items{
 	        transition: all 0.15s ease;
 }
 
-.aka-direction-before a.aka-back:hover:before{
+.slwp-direction-before a.slwp-back:hover:before{
 	content: '\f0a5';
 	left: 0;
 	position: absolute;
@@ -217,17 +217,17 @@ ul.store-ul-lists li span.store-items{
 }
 
 
-#aka-direction-detail .aka-distance-time span{
+#slwp-direction-detail .slwp-distance-time span{
 	margin: 10px 0;
 }
 
-#aka-direction-detail ul{
+#slwp-direction-detail ul{
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-#aka-direction-detail ul li{
+#slwp-direction-detail ul li{
 	border-bottom: 1px dotted #ccc;
     display: block;
     overflow: hidden;
@@ -236,28 +236,28 @@ ul.store-ul-lists li span.store-items{
 }
 
 /*--------------------------------------------------------------
- * ## Aka Right Map Wrap
+ * ## SLWP Right Map Wrap
  *--------------------------------------------------------------
  */
 
-aside.aka-right-wrap{
+aside.slwp-right-wrap{
 	float: right;
     overflow: hidden;
     padding-left: 10px;
 	width: 50%;
 }
 
-.aka-map-wrap {
+.slwp-map-wrap {
 	width: 100%;
 }
 
-#aka-map{
+#slwp-map{
 	height: calc(100vh - 200px) !important;
 }
 
 
 @media screen and (max-width: 480px){
-	aside.aka-left-wrap{
+	aside.slwp-left-wrap{
 		float: none;
 		height: calc(100vh - 200px);
 		margin-top: 20px;
@@ -265,12 +265,12 @@ aside.aka-right-wrap{
 		width: 100%;
 	}
 
-	aside.aka-right-wrap{
+	aside.slwp-right-wrap{
 		float: none;
 		width: 100%;
 	}
 
-	#aka-map{
+	#slwp-map{
 		height: 50vh !important;
 	}
 	
