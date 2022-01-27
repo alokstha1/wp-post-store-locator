@@ -26,6 +26,7 @@ if ( !class_exists( 'SLWP_Admin' ) ) {
         /**
         * Add menu page.
         * @since 1.0.0
+        * @return void
         */
         public function slwp_register_menu_page() {
             add_menu_page( __( 'Store Settings', 'slwp-stores'), __( 'Store Settings', 'slwp-stores'), 'manage_options', 'slwp_stores.php', array( $this, 'slwp_add_setting_page' ), '', 20 );
@@ -34,6 +35,7 @@ if ( !class_exists( 'SLWP_Admin' ) ) {
         /**
         * Enqueue Google Map API into the admin.
         * @since 2.0.0
+        * @return void
         */
         public function slwp_stores_admin_scripts() {
 
@@ -59,6 +61,7 @@ if ( !class_exists( 'SLWP_Admin' ) ) {
         /**
         * Callback function of add_menu_page. Displays the page's content.
         * @since 1.0.0
+        * @return void
         */
         public function slwp_add_setting_page() {
 
@@ -68,6 +71,7 @@ if ( !class_exists( 'SLWP_Admin' ) ) {
         /**
         * Register settings options and save to wp_options table.
         * @since 1.0.0
+        * @return void
         */
         public function slwp_register_settings() {
             register_setting( 'slwp_store_options', 'slwp_store_options', array( $this, 'slwp_sanitize_settings' ) );
@@ -77,6 +81,7 @@ if ( !class_exists( 'SLWP_Admin' ) ) {
         /**
         * Save admin form settings value to slwp_store_option option.
         * @since 1.0.0
+        * @return array
         */
         public function slwp_sanitize_settings() {
 
@@ -177,6 +182,7 @@ if ( !class_exists( 'SLWP_Admin' ) ) {
         /**
         * Add meta box to selected post types.
         * @since 1.0.0
+        * @return void
         */
         public function slwp_stores_meta_boxes() {
             $slwp_store_setting = get_option('slwp_store_options');
@@ -193,6 +199,7 @@ if ( !class_exists( 'SLWP_Admin' ) ) {
         /**
         * Callback function displaying form elements to add_meta_box.
         * @since 1.0.0
+        * @return void
         */
         public function slwp_display_metabox() {
             require SLWP_PLUGIN_DIR .'admin/view/metabox-form.php';
@@ -200,7 +207,7 @@ if ( !class_exists( 'SLWP_Admin' ) ) {
 
         /**
         * Ajax response returns concatinated lat-long
-        * @return lat,lng(121.230045,234.000034573)
+        * @return string lat,lng(121.230045,234.000034573)
         * @since 1.0.0
         */
         public function slwp_stores_return_address_latlng() {
@@ -216,6 +223,7 @@ if ( !class_exists( 'SLWP_Admin' ) ) {
         /**
         * Save stores- items meta
         * @since 1.0.0
+        * @return void
         */
         public function slwp_stores_save_posts( $post_id ) {
 
@@ -241,6 +249,7 @@ if ( !class_exists( 'SLWP_Admin' ) ) {
         /**
          * Handle the different validation errors for the plugin settings.
          * @since 1.0.0
+         * @return string
          */
         private function settings_error( $error_type ) {
 

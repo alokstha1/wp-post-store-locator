@@ -28,7 +28,9 @@ if ( !class_exists( 'SLWP_Frontend' ) ) {
         }
 
         /**
-        *  Enqueue scripts for front-end
+        * Enqueue scripts for front-end
+        * @since 1.0.0
+        * @return void
         */
         public function slwp_stores_add_scripts_style() {
             $slwp_store_setting = get_option('slwp_store_options');
@@ -62,6 +64,7 @@ if ( !class_exists( 'SLWP_Frontend' ) ) {
         /**
         * Returns shortcode output
         * @since 1.0
+        * @return void
         */
         public function slwp_list_stores( $atts ) {
             $slwp_store_setting = get_option('slwp_store_options');
@@ -207,6 +210,7 @@ if ( !class_exists( 'SLWP_Frontend' ) ) {
 
         /**
          * Handle the Ajax search on the frontend.
+         * @since 1.0.0
          * @return json A list of store locations that are located within the selected search radius
          */
         public function slwp_store_search() {
