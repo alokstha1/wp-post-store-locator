@@ -18,7 +18,7 @@ If you are looking to setup a store locator for your individual products, posts 
 * Can handle multiple stores in each individual posts.
 * Select language suitable for users that appears in map and driving directions.
 * Set map regions so that the map appears around you area.
-* Shortcode to show the stores and search form [aka-stores].
+* Shortcode to show the stores and search form [slwp-stores].
 * Get directional view control.
 * Show map type and control it on your desire.
 * Autocomplete on location search.
@@ -26,8 +26,8 @@ If you are looking to setup a store locator for your individual products, posts 
 
 **Plugin Shortcodes**
 `
-[aka-stores] //copy-paste the shortcode to the text-editor
-[aka-stores id=post-id] //pass post id if you want to display shortcode in other places
+[slwp-stores] //copy-paste the shortcode to the text-editor
+[slwp-stores id=post-id] //pass post id if you want to display shortcode in other places
 `
 
 

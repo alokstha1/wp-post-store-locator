@@ -1386,7 +1386,7 @@ table > tbody > tr > td.remove {
     background: #F9F9F9;
 }
 
-a.aka-button-remove{
+a.slwp-button-remove{
     background: url(../images/sprite.png) -16px -116px no-repeat #fff;
     display: block;
     height: 18px;
@@ -1400,7 +1400,7 @@ a.aka-button-remove{
     position: relative;
 }
 
-/*table > tbody > tr > td.remove > a.aka-button-remove {
+/*table > tbody > tr > td.remove > a.slwp-button-remove {
 }
 */
 
@@ -1456,19 +1456,19 @@ span.slwp-info-text {
 
 
 
-#aka-store-setting-form .postbox-container {
+#slwp-store-setting-form .postbox-container {
     width: 100%;
     clear: both;
 }
 
-#aka-store-setting-form .metabox-container {
+#slwp-store-setting-form .metabox-container {
     width: 100%;
     padding-top: 0;
     float: left;
     margin-right: 20px;
 }
 
-#aka-store-setting-form label {
+#slwp-store-setting-form label {
     position: relative;
     display: inline-block;
     margin: 0 10px 0 0;
@@ -1479,7 +1479,7 @@ span.slwp-info-text {
     padding-right: 24px;
 }
 
-#aka-store-setting-form .postbox h3.hndle {
+#slwp-store-setting-form .postbox h3.hndle {
     font-size: 14px;
     padding: 8px 12px;
     margin: 0;
@@ -1491,7 +1491,7 @@ span.distance-boxes, span.post-types-boxes {
     display: inline-block;
 }
 
-#aka-store-setting-form .distance-boxes label, #aka-store-setting-form .distance-boxes input, #aka-store-setting-form .post-types-boxes label, #aka-store-setting-form .post-types-boxes input {
+#slwp-store-setting-form .distance-boxes label, #slwp-store-setting-form .distance-boxes input, #slwp-store-setting-form .post-types-boxes label, #slwp-store-setting-form .post-types-boxes input {
     float: left;
     width: auto;
 }
@@ -1500,15 +1500,15 @@ table {
     width: 100%;
 }
 
-#aka-newmeta input[type="text"], #aka-newmeta textarea {
+#slwp-newmeta input[type="text"], #slwp-newmeta textarea {
     width: 100%;
 }
 
-#aka-newmeta td {
+#slwp-newmeta td {
     vertical-align: top;
 }
 
-table#aka-newmeta {
+table#slwp-newmeta {
     border-radius: 0 0 0 0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     margin-bottom: 9px;
@@ -1522,12 +1522,12 @@ table#aka-newmeta {
     background-color: #fff;
 }
 
-table#aka-newmeta > thead > tr > th.aka-del-edit, table#aka-newmeta > tbody > tr > td.aka-del-edit {
+table#slwp-newmeta > thead > tr > th.slwp-del-edit, table#slwp-newmeta > tbody > tr > td.slwp-del-edit {
     width: 16px !important;
     vertical-align: middle;
 }
 
-table#aka-newmeta th, table#aka-newmeta td {
+table#slwp-newmeta th, table#slwp-newmeta td {
     padding: 8px;
     position: relative;
     vertical-align: top;

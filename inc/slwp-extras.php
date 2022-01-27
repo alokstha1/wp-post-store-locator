@@ -452,8 +452,8 @@ function slwp_stores_deregister_other_font_awesome() {
 * Return default saved value
 */
 function slwp_stores_get_default_setting( $setting ) {
-    global $aka_store_default_setting;
-    return $aka_store_default_setting[$setting];
+    global $slwp_store_default_setting;
+    return $slwp_store_default_setting[$setting];
 }
 
 /**

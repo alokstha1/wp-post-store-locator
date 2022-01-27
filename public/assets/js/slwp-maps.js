@@ -461,9 +461,9 @@ jQuery(document).ready( function() {
                         var serial_no = index;
                         serial_no = ++serial_no;
 
-                        var title_url_wrap = slwp_setTitleUrl(value.aka_name, value.aka_url, slwp_stores.slwp_settings.show_url_field);
+                        var title_url_wrap = slwp_setTitleUrl(value.slwp_name, value.slwp_url, slwp_stores.slwp_settings.show_url_field);
 
-                        result_html += '<li class="store-items" id="store-item-id-'+index+'" data-storeid="'+index+'" data-storename="'+value.aka_name+'" data-storeurl="'+value.aka_url+'" data-latlng="'+value.aka_location_latn+'" data-phone="'+value.aka_phone+'" data-address="'+value.aka_location+'" data-desc="'+value.aka_description+'">';
+                        result_html += '<li class="store-items" id="store-item-id-'+index+'" data-storeid="'+index+'" data-storename="'+value.slwp_name+'" data-storeurl="'+value.slwp_url+'" data-latlng="'+value.slwp_location_latn+'" data-phone="'+value.slwp_phone+'" data-address="'+value.slwp_location+'" data-desc="'+value.slwp_description+'">';
                         result_html += '<div class="map-content">';
                         result_html += '<h3 class="store-title">';
                         result_html += '<span class="store-key">'+serial_no+'</span>';
@@ -471,15 +471,15 @@ jQuery(document).ready( function() {
                         result_html += title_url_wrap.title;
                         result_html += title_url_wrap.after_wrap;
                         result_html += '</h3>';
-                        result_html += '<span class="store-items store-address">'+value.aka_location;
+                        result_html += '<span class="store-items store-address">'+value.slwp_location;
                         result_html += '</span>';
                         if ( slwp_stores.slwp_settings.show_phone_field ) {
 
-                            result_html += '<span class="store-items store-phone">'+value.aka_phone+'</span>';
+                            result_html += '<span class="store-items store-phone">'+value.slwp_phone+'</span>';
                         }
                         if ( slwp_stores.slwp_settings.show_description_field ) {
 
-                            result_html += '<p>'+value.aka_description+'</p>';
+                            result_html += '<p>'+value.slwp_description+'</p>';
                         }
                         if ( slwp_stores.slwp_settings.direction_view_control ) {
                             result_html += '<span class="store-items get-direction"><a class="slwp-get-direction" href="#" id="get-direction-'+index+'">Get Direction</a></span>';
@@ -488,7 +488,7 @@ jQuery(document).ready( function() {
                         result_html += '</li>';
 
 
-                        var item_latlng = value.aka_location_latn.split( "," );
+                        var item_latlng = value.slwp_location_latn.split( "," );
                         response_latLng = new google.maps.LatLng( item_latlng[0], item_latlng[1] );
 
                         slwp_addMarker( response_latLng, index, infoWindow );

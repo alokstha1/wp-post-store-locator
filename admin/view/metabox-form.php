@@ -2,7 +2,7 @@
 
 $slwp_store_setting = get_option('slwp_store_options');
 
-$slwp_locators = get_post_meta( get_the_ID(), 'aka_saved_locators', true );
+$slwp_locators = get_post_meta( get_the_ID(), 'slwp_saved_locators', true );
 $fields_count = ( isset( $slwp_locators ) && !empty( $slwp_locators ) ) ? count( $slwp_locators ) : 0;
 
 
@@ -47,17 +47,17 @@ $fields_count = ( isset( $slwp_locators ) && !empty( $slwp_locators ) ) ? count(
                     <tr>
                         <td>
                             <span>
-                                <?php echo esc_attr( $slwp_value['aka_name'] ); ?>
+                                <?php echo esc_attr( $slwp_value['slwp_name'] ); ?>
                             </span>
-                            <div class="slwp-input-wrap"><input class="hidden" type="text" name="slwp_store_meta[<?php echo $slwp_key; ?>][aka_name]" value="<?php echo esc_attr( $slwp_value['aka_name'] ); ?>"></div>
+                            <div class="slwp-input-wrap"><input class="hidden" type="text" name="slwp_store_meta[<?php echo $slwp_key; ?>][slwp_name]" value="<?php echo esc_attr( $slwp_value['slwp_name'] ); ?>"></div>
                         </td>
                         <td>
                             <span>
-                                <?php echo esc_attr( $slwp_value['aka_location'] ); ?>
+                                <?php echo esc_attr( $slwp_value['slwp_location'] ); ?>
                             </span>
                             <div class="slwp-input-wrap">
-                                <input class="hidden" type="text" name="slwp_store_meta[<?php echo $slwp_key; ?>][aka_location]" value="<?php echo esc_attr( $slwp_value['aka_location'] ); ?>">
-                                <input type="hidden" name="slwp_store_meta[<?php echo $slwp_key; ?>][aka_location_latn]" value="<?php echo esc_attr( $slwp_value['aka_location_latn'] ); ?>">
+                                <input class="hidden" type="text" name="slwp_store_meta[<?php echo $slwp_key; ?>][slwp_location]" value="<?php echo esc_attr( $slwp_value['slwp_location'] ); ?>">
+                                <input type="hidden" name="slwp_store_meta[<?php echo $slwp_key; ?>][slwp_location_latn]" value="<?php echo esc_attr( $slwp_value['slwp_location_latn'] ); ?>">
                             </div>
                         </td>
                         <?php
@@ -65,11 +65,11 @@ $fields_count = ( isset( $slwp_locators ) && !empty( $slwp_locators ) ) ? count(
                             ?>
                             <td>
                                 <span>
-                                    <?php echo ( !empty( $slwp_value['aka_url'] )  ) ? esc_url( $slwp_value['aka_url'] ) : '' ; ?>
+                                    <?php echo ( !empty( $slwp_value['slwp_url'] )  ) ? esc_url( $slwp_value['slwp_url'] ) : '' ; ?>
 
                                 </span>
                                 <div class="slwp-input-wrap">
-                                    <input class="hidden" type="text" name="slwp_store_meta[<?php echo $slwp_key; ?>][aka_url]" value="<?php echo ( !empty( $slwp_value['aka_url'])  ) ? esc_url( $slwp_value['aka_url'] ) : '' ; ?>">
+                                    <input class="hidden" type="text" name="slwp_store_meta[<?php echo $slwp_key; ?>][slwp_url]" value="<?php echo ( !empty( $slwp_value['slwp_url'])  ) ? esc_url( $slwp_value['slwp_url'] ) : '' ; ?>">
                                 </div>
                             </td>
                             <?php
@@ -78,11 +78,11 @@ $fields_count = ( isset( $slwp_locators ) && !empty( $slwp_locators ) ) ? count(
                             ?>
                             <td>
                                 <span>
-                                    <?php echo ( !empty( $slwp_value['aka_phone'] )  ) ? esc_attr( $slwp_value['aka_phone'] ) : '' ; ?>
+                                    <?php echo ( !empty( $slwp_value['slwp_phone'] )  ) ? esc_attr( $slwp_value['slwp_phone'] ) : '' ; ?>
 
                                 </span>
                                 <div class="slwp-input-wrap">
-                                    <input class="hidden" type="text" name="slwp_store_meta[<?php echo $slwp_key; ?>][aka_phone]" value="<?php echo ( !empty( $slwp_value['aka_phone'] )  ) ? esc_attr( $slwp_value['aka_phone'] ) : '' ; ?>">
+                                    <input class="hidden" type="text" name="slwp_store_meta[<?php echo $slwp_key; ?>][slwp_phone]" value="<?php echo ( !empty( $slwp_value['slwp_phone'] )  ) ? esc_attr( $slwp_value['slwp_phone'] ) : '' ; ?>">
                                 </div>
                             </td>
                             <?php
@@ -91,11 +91,11 @@ $fields_count = ( isset( $slwp_locators ) && !empty( $slwp_locators ) ) ? count(
                             ?>
                             <td>
                                 <span>
-                                    <?php echo ( !empty( $slwp_value['aka_description'] )  ) ? esc_attr( $slwp_value['aka_description'] ) : '' ; ?>
+                                    <?php echo ( !empty( $slwp_value['slwp_description'] )  ) ? esc_attr( $slwp_value['slwp_description'] ) : '' ; ?>
 
                                 </span>
                                 <div class="slwp-input-wrap">
-                                    <textarea class="hidden" name="slwp_store_meta[<?php echo $slwp_key; ?>][aka_description]"><?php echo ( !empty( $slwp_value['aka_description'] )  ) ? esc_textarea( $slwp_value['aka_description'] ) : '' ; ?></textarea>
+                                    <textarea class="hidden" name="slwp_store_meta[<?php echo $slwp_key; ?>][slwp_description]"><?php echo ( !empty( $slwp_value['slwp_description'] )  ) ? esc_textarea( $slwp_value['slwp_description'] ) : '' ; ?></textarea>
                                 </div>
                             </td>
                             <?php
